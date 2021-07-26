@@ -1,3 +1,12 @@
+ecinauce_frontend/*
+ecinauce_frontend/
+ecinauce_frontend
+node_modules/*
+node_modules/
+node_modules
+
+package-lock.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
