@@ -1,6 +1,6 @@
 var app = new Vue({
   el: '#app',
   data: {
-    message: 'Nicolo Lynsu T. Ecuacion'
+    name: 'Nicolo Lynsu T. Ecuacion'
   }
 })
