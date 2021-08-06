@@ -1,19 +1,44 @@
 <template>
-    <div class="row">
-        <div class="col text-center p-5 m-5">
-            <h1 class="display-1 m-3 text-secondary">Nicolo Lynsu T. Ecuacion</h1>
-            <h4 class="lead m-3 text-muted">Software Developer</h4>
-        </div>
-    </div>
+	<UserDisplay></UserDisplay>
+	<Objectives></Objectives>
+
+	<!--button class="btn btn-secondary" @click="show = !show">Edit</button>
+	<UserForm></UserForm>
+	
+	<transition name="fade" mode="out-in">
+		<div v-else>
+			
+		</div>
+	</transition-->
 </template>
 
 <script>
+import UserDisplay from '../components/UserDisplay.vue'
+//import UserForm from '../components/UserForm.vue'
+import Objectives from '../components/Objectives.vue'
+
 export default {
-  name: 'User'
+  name: 'User',
+  components: {
+    //UserForm,
+    UserDisplay,
+    Objectives
+  },
+  data () {
+    return {
+      show: true
+    }
+  },
+  
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>

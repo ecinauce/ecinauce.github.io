@@ -1,10 +1,29 @@
 <template>
 <div class="container">
 <div class="row p-5 m-5"></div>
+  <!--Register></Register-->
 
-  <User></User>
+  <h1>Login</h1>
 
-  <Objectives></Objectives>
+  <br> {{ formFeedback }} <br>
+
+  <form id="login" name="login">
+    <div>
+      <label for="username">Enter name:</label>
+      <input type="text" id="username" name="username" v-model="username">
+    </div>
+    <div>
+      <label for="password">Enter Password:</label>
+      <input type="password" id="password" name="password" v-model="password">
+    </div>
+    <button @click="login" type="button">Submit</button>
+  </form>
+
+  <br><br><br>
+  
+  {{ info }}
+
+  <!--User></User>
 
   <Projects></Projects>
 
@@ -12,30 +31,65 @@
 
   <Experience></Experience>
 
-  <Contact></Contact>
+  <Contact></Contact-->
 
 <div class="row p-5 m-5"></div>
 </div>
 </template>
 
 <script>
-import User from './components/User.vue'
-import Objectives from './components/Objectives.vue'
-import Projects from './components/Projects.vue'
+import axios from 'axios'
+// import Register from './components/Register.vue'
+/*import Projects from './components/Projects.vue'
 import Skills from './components/Skills.vue'
 import Experience from './components/Experience.vue'
 import Contact from './components/Contact.vue'
+import User from './components/User.vue'*/
 
 export default {
   name: 'App',
+  data () {
+    return {
+      info: null,
+      formFeedback: null,
+      username: null,
+      password: null
+    }
+  },
   components: {
-    User,
-    Objectives,
+    //Register
+    /*User,
     Projects,
     Skills,
     Experience,
-    Contact
-  }
+    Contact*/
+  },
+  methods: {
+    update_home() {
+      axios
+        .get('http://localhost:5000/')
+        .then(response => (this.info = response["data"]))
+    },
+    login() {
+      let object = {
+          username: this.username,
+          password: this.password
+        }
+
+      axios.post("http://localhost:5000/login", object, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+          .then(
+            (response) => {this.formFeedback = response["data"]; this.update_home()}, 
+            (error) => {this.formFeedback = error}
+          );
+      }
+  },
+  mounted () {
+    this.update_home()
+  },
 }
 </script>
 
