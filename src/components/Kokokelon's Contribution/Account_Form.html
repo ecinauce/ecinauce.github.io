@@ -1,0 +1,20 @@
+
+  <h1>Account Form</h1>
+  <br>
+  <br>
+  <form id="registration" name="registration">
+    <div>
+      <label for="Fname">Name:</label>
+      <input type="text" id="Fname" name="Fname" v-model="Fname">
+    </div>
+    <div>
+      <label for="Jtitle">Job Title:</label>
+      <input type="text" id="Jtitle" name="Jtitle" v-model="Jtitle">
+    </div>
+    <div>
+      <label for="Car_Obj">Career Objectives:</label>
+      <input type="text" id="Car_Obj" name="Car_Obj" v-model="Car_Obj">
+    </div>
+    <button @click="register" type="button">Submit</button>
+  </form>
+
