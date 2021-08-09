@@ -1,0 +1,20 @@
+
+  <h1>Skills Form</h1>
+  <br>
+  <br>
+  <form id="registration" name="registration">
+    <div>
+      <label for="Skills">Skills:</label>
+      <input type="text" id="Skills" name="Skills" v-model="Skills">
+    </div>
+    <div>
+      <label for="Cate">Categories:</label>
+      <input type="text" id="Cate" name="Cate" v-model="Cate">
+    </div>
+    <div>
+      <label for="Tags">Tags:</label>
+      <input type="text" id="Tags" name="Tags" v-model="Tags">
+    </div>
+    <button @click="register" type="button">Submit</button>
+  </form>
+
