@@ -6,15 +6,18 @@
     <div>
       <label for="Skills">Skills:</label>
       <input type="text" id="Skills" name="Skills" v-model="Skills">
+      <button @click="register" id="Skills_Sub" name="Skills_Sub" v-model="Skills_Sub" type="button">Submit</button>
     </div>
     <div>
       <label for="Cate">Categories:</label>
       <input type="text" id="Cate" name="Cate" v-model="Cate">
+      <button @click="register" id="Cate_Sub" name="Cate_Sub" v-model="Cate_Sub" type="button">Submit</button>
     </div>
     <div>
       <label for="Tags">Tags:</label>
       <input type="text" id="Tags" name="Tags" v-model="Tags">
+      <button @click="register" id="Tags_Sub" name="Tags_Sub" v-model="Tags_Sub" type="button">Submit</button>
     </div>
-    <button @click="register" type="button">Submit</button>
+    <button @click="register" id="Sub_Sub" name="Sub_Sub" v-model="Sub_Sub" type="button">Submit</button>
   </form>
 
