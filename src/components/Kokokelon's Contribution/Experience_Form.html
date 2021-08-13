@@ -1,0 +1,23 @@
+
+  <h1>Experience Form</h1>
+  <br>
+  <br>
+  <form id="registration" name="registration">
+    <div>
+      <label for="Exp">Experience:</label>
+      <input type="text" id="Exp" name="Exp" v-model="Exp">
+      <button @click="register" id="Exp_Sub" name="Exp_Sub" v-model="Exp_Sub" type="button">Submit</button>
+    </div>
+    <div>
+      <label for="Fields">Fields:</label>
+      <input type="text" id="Fields" name="Fields" v-model="Fields">
+      <button @click="register" id="Fields_Sub" name="Fields_Sub" v-model="Fields_Sub" type="button">Submit</button>
+    </div>
+    <div>
+      <label for="Insti">Institution:</label>
+      <input type="text" id="Insti" name="Insti" v-model="Insti">
+      <button @click="register" id="Insti_Sub" name="Insti_Sub" v-model="Insti_Sub" type="button">Submit</button>
+    </div>
+    <button @click="register" id="Sub_Sub" name="Sub_Sub" v-model="Sub_Sub" type="button">Submit</button>
+  </form>
+
