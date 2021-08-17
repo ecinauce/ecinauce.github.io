@@ -46,6 +46,8 @@ import Experience from './components/Experience.vue'
 import Contact from './components/Contact.vue'
 import User from './components/User.vue'*/
 
+//axios.defaults.withCredentials = true; 
+
 export default {
   name: 'App',
   data () {
@@ -66,7 +68,8 @@ export default {
   },
   methods: {
     update_home() {
-      axios
+        console.log(axios.defaults);
+        axios
         .get('http://localhost:5000/')
         .then(response => (this.info = response["data"]))
     },
@@ -76,15 +79,18 @@ export default {
           password: this.password
         }
 
-      axios.post("http://localhost:5000/login", object, {
+      axios.post("http://localhost:5000/login", object/*, {
           headers: {
             'Content-Type': 'application/json'
           }
-        })
-          .then(
-            (response) => {this.formFeedback = response["data"]; this.update_home()}, 
-            (error) => {this.formFeedback = error}
-          );
+        }*/)
+        .then(
+          (response) => {
+            this.formFeedback = response["data"]; 
+            this.update_home()
+          }, (error) => {
+            this.formFeedback = error
+          });
       }
   },
   mounted () {

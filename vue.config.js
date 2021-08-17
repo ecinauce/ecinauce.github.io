@@ -9,5 +9,8 @@ module.exports = {
                 args[0].title = "Ennchan's Repo Hub";
                 return args;
             })
+    },
+    devServer: {
+    	proxy: 'http://localhost:5000/'
     }
 }
